@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.weather-app {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  margin: 1.5rem 0 1rem;
+  font-size: 1.3rem;
+}
+
+.location {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 2rem;
+}
+
+#current-icon {
+  width: 80px;
+  margin-bottom: 0.3rem;
+}
+
+#current-temp {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.forecast-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  justify-items: center;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px); /* desenfoque del fondo */
+  -webkit-backdrop-filter: blur(10px); /* compatibilidad Safari */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  max-width: 100px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.forecast-card:hover {
+  transform: scale(1.05);
+}
+
+.forecast-card img {
+  width: 50px;
+  margin: 0.3rem 0;
+  filter: drop-shadow(2px 0px 1px black);
+}
+
+.time {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.temp {
+  font-size: 1rem;
+}
+
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .weather-app {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  .forecast-container {
+    grid-template-columns: repeat(2, 1fr); /* solo 2 por fila */
+    gap: 0.6rem;
+  }
+
+  .forecast-card {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  #current-icon {
+    width: 70px;
+  }
+
+  #current-temp {
+    font-size: 1.8rem;
+  }
+}
